@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CameraApp"
              x:Class="CameraApp.MainPage">
-
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ScrollView>
+        <StackLayout>
+            <Image x:Name="ImagePreview" WidthRequest="200" Margin="10,10,10,10" />
+            <Button Text="Take Photo" Clicked="TakePhoto" FontSize="20" />
+            <Button Text="Choose Photo" Clicked="ChoosePhoto" FontSize="20" />
+            <Button Text="Record Video" Clicked="RecordVideo" FontSize="20" />
+            <Button Text="Choose Video" Clicked="ChooseVideo" FontSize="20" />
+        </StackLayout>
+    </ScrollView>
 
 </ContentPage>
