@@ -43,7 +43,8 @@ namespace CameraApp
 
             //Upload para o Azure
             BlobService blobService = new BlobService();
-            await blobService.UploadImage("photos", Guid.NewGuid().ToString()+".jpg", file.GetStream(), "image/jpg");
+            var url = await blobService.UploadFileAsync("photos", Guid.NewGuid().ToString()+".jpg", file.GetStream(), "image/jpg");
+            EntryUrl.Text = url;
         }
 
         private async void ChoosePhoto(object sender, EventArgs e)
@@ -87,6 +88,11 @@ namespace CameraApp
                 return;
 
             ImagePreview.Source = ImageSource.FromStream(() => file.GetStream());
+
+            //Upload para o Azure
+            BlobService blobService = new BlobService();
+            var url = await blobService.UploadFileAsync("videos", Guid.NewGuid().ToString() + ".mp4", file.GetStream(), "video/mp4");
+            EntryUrl.Text = url;
         }
 
         private async void ChooseVideo(object sender, EventArgs e)

@@ -10,6 +10,8 @@
             <Button Text="Choose Photo" Clicked="ChoosePhoto" FontSize="20" />
             <Button Text="Record Video" Clicked="RecordVideo" FontSize="20" />
             <Button Text="Choose Video" Clicked="ChooseVideo" FontSize="20" />
+            <Label Text="Resource URL after upload:"/>
+            <Entry x:Name="EntryUrl"/>
         </StackLayout>
     </ScrollView>
 
